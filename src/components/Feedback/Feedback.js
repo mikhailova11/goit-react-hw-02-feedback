@@ -2,7 +2,7 @@ import React from "react";
 import Statistics from "../Statistics";
 import Section from "../Section";
 import FeedbackOptions from "../FeedbackOptions";
-// import s from "./Feedback.module.css";
+import s from "./Feedback.module.css";
 
 class Feedback extends React.Component {
     state = {
@@ -38,7 +38,7 @@ class Feedback extends React.Component {
 
   render() {
     return (
-        <div>
+        <div className={s.container}>
             <Section title="Please leave feedback"/>
             <FeedbackOptions  
             good={this.countFeedbackGood} 

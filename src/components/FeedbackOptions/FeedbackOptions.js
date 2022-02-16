@@ -2,13 +2,14 @@ import React from "react";
 import s from "./FeedbackOptions.module.css";
 
 
-const FeedbackOptions = ({good, neutral, bad}) => {
+const FeedbackOptions = ({options, onLeaveFeedback}) => {
     return (
-        <div className={s.listBtn}  >
-            <button className={s.button} type="button" onClick={good} >Good</button>
-            <button className={s.button} type="button" onClick={neutral}>Neutral</button>
-            <button className={s.button} type="button" onClick={bad}>Bad</button>
-        </div>
+        <div className={s.listBtn} >
+           
+           { options.map((option) => (
+            <button key={option} className={s.button} type="button" onClick={()=>{onLeaveFeedback(option)}} >{option}</button>
+           ))}
+    </div>
     )
 }
 
